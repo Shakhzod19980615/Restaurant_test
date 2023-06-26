@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Restaurant_test</string>
+    <string name="location_address">Санкт-Петербург</string>
+    <string name="category_name">Пекарни и кондитерские</string>
 </resources>

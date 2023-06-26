@@ -1,4 +1,4 @@
-package com.example.restaurant_test.ui
+package com.example.restaurant_test.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,20 +9,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.restaurant_test.R
 import com.example.restaurant_test.databinding.FragmentHomeBinding
+import com.example.restaurant_test.databinding.FragmentSearchBinding
 import com.example.restaurant_test.di.AppComponent
 import javax.inject.Inject
 import kotlin.properties.Delegates
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class SearchFragment : Fragment(R.layout.fragment_search) {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
-    private var binding: FragmentHomeBinding by Delegates.notNull()
+    private var binding: FragmentSearchBinding by Delegates.notNull()
     override fun onAttach(context: Context) {
         super.onAttach(context)
         AppComponent.get().inject(this)
 
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,7 +34,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater)
+        binding = FragmentSearchBinding.inflate(inflater)
         return binding.root
 
     }
@@ -40,6 +42,5 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
 
 }

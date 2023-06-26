@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.restaurant_test.databinding.ActivityMainBinding
-import com.example.restaurant_test.ui.CartFragment
-import com.example.restaurant_test.ui.HomeFragment
-import com.example.restaurant_test.ui.ProfileFragment
-import com.example.restaurant_test.ui.SearchFragment
+import com.example.restaurant_test.ui.fragment.CartFragment
+import com.example.restaurant_test.ui.fragment.HomeFragment
+import com.example.restaurant_test.ui.fragment.ProfileFragment
+import com.example.restaurant_test.ui.fragment.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         if (savedInstanceState == null) {
-           // replaceFragment(LoginFragment())
+            replaceFragment(HomeFragment())
         }
         binding.bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -37,18 +37,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        val menuItem: MenuItem = menu.findItem(R.id.cartFragment)
-        val actionView : View = menuItem.actionView!!
-        val cardBadgeTV : TextView = actionView.findViewById(R.id.cart_badge_tv)
-        cardBadgeTV.text = "2"
-        actionView.setOnClickListener {
-            replaceFragment(CartFragment())
-            onOptionsItemSelected(menuItem)
-
-        }
-        return true
-
-    }*/
 }

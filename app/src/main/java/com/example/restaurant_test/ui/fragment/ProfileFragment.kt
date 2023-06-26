@@ -1,4 +1,4 @@
-package com.example.restaurant_test.ui
+package com.example.restaurant_test.ui.fragment
 
 import android.content.Context
 import androidx.fragment.app.Fragment

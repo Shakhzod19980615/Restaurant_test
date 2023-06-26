@@ -1,24 +1,27 @@
 package com.example.restaurant_test.di
 
 import android.app.Application
-import androidx.core.view.KeyEventDispatcher
 import com.example.restaurant_test.di.networkmodule.NetworkModule
+import com.example.restaurant_test.di.room.DatabaseModule
 import com.example.restaurant_test.di.viewmodel.ViewModelModule
-import com.example.restaurant_test.ui.CartFragment
-import com.example.restaurant_test.ui.HomeFragment
-import com.example.restaurant_test.ui.ProfileFragment
-import com.example.restaurant_test.ui.SearchFragment
+import com.example.restaurant_test.ui.fragment.*
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [NetworkModule::class,ViewModelModule::class])
+@Component(modules = [DatabaseModule::class, NetworkModule::class,ViewModelModule::class])
 interface AppComponent {
     fun inject(fragment: HomeFragment)
     fun inject(fragment: CartFragment)
     fun inject(fragment: SearchFragment)
     fun inject(fragment: ProfileFragment)
+    fun inject(fragment: MenuFragment)
+    fun inject(fragment:AllMenuFragment)
+    fun inject(fragment:SaladMenuFragment)
+    fun inject(fragment:WithFishMenuFragment)
+    fun inject(fragment:WithRiceMenuFragment)
+    fun inject(fragment:ItemDialogFragment)
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance application: Application): AppComponent
