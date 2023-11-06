@@ -41,6 +41,24 @@ class MenuListAdapter(
             binding.itemTitle.text = menuListItem.dishName
             Glide.with(binding.root).load(menuListItem.dishImage).into(binding.itemImage)
         }
+    /*    binding.icFavourite.setOnClickListener{
+            val  item = subCategoryItemList[bindingAdapterPosition]
+            onFavouritemClick(item)
+        }
+        if(subCategoryItemModel.isFavourite){
+            binding.icFavourite.setBackgroundResource(R.drawable.ic_favorite_filled)
+        }else{
+            binding.icFavourite.setBackgroundResource(R.drawable.ic_favorite_outlined)
+        }
+
+        binding.icBasket.setOnClickListener {
+            val bottomSheetCart = BottomSheetCart()
+            val argsCart = Bundle()
+            argsCart.putString("keyword",)
+            val item = subCategoryItemList[bindingAdapterPosition]
+            onBasketClick(item.keyword)
+            binding.icBasket.setBackgroundResource(R.drawable.ic_added_item_cart)
+        }*/
         init {
             itemView.setOnClickListener {
                 val item = menuListItem[bindingAdapterPosition]

@@ -66,6 +66,31 @@ class MenuFragment : Fragment(R.layout.fragment_menu) {
                  ).addToBackStack("replacement")
              }
          }
+
+        /*val subCategoryItemAdapter = SubCategoryItemAdapter(
+            layoutInflater= layoutInflater,
+            onFavouritemClick = {
+                viewModel.insertOrDeleteFavouriteItem(item = it)
+
+            },
+            onItemClick = { keyword ->
+                activity?.supportFragmentManager?.commit {
+                    replace<SubMainCategoryDetails>(
+                        containerViewId = R.id.fragment_container_view_tag,
+                        args = bundleOf("keyword" to keyword)
+                    ).addToBackStack("replacement")
+                }
+            }, onBasketClick = {
+                viewModel.postItemToCartList(it)
+                val bottomSheetCart = BottomSheetCart()
+                val argsCart = Bundle()
+                argsCart.putString("keyword",it)
+                bottomSheetCart.arguments = argsCart
+                bottomSheetCart.show(requireActivity().supportFragmentManager,"BottomSheetDialog")
+            }, *//*onRemoveClick = {
+                favouriteViewModel.deleteFavouriteItem(id = productMutableListModel[0])
+            }*//*
+        )*/
          binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Все меню"))
          binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Салаты"))
          binding.tabLayout.addTab(binding.tabLayout.newTab().setText("С рисом"))

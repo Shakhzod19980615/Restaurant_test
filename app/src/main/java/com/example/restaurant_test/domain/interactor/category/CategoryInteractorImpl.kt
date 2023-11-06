@@ -20,6 +20,9 @@ class CategoryInteractorImpl @Inject constructor(
         val products = allTegs.map { teg->
             allProducts.filter { it.tegs.contains(teg) }
         }
+        val product = allTegs.map { teg->
+            allProducts.groupBy { it.tegs.contains(teg) }
+        }
         return categoryRepository.getMenuList()
 
     }
